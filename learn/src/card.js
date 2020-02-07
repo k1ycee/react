@@ -1,13 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Card extends Component{
-    render(){
+const Card = ({cards}) => {
+  const cardlist = cards.map(card => {
+    return(
+      <div className = 'card' key = {card.id}>
+        <div>Name : {card.name}</div>
+        <div>Expiry Date: {card.expiry}</div>
+        <div>Bank: {card.bank}</div>
+      </div>
+    )
+  }
+  )
       return (
-        <div className="card">
-          <h1>A card</h1>
-          <p>CHE CHE REE CHEE</p>
+        <div className = "card - list">
+        {cardlist}
         </div>
       );
-    }
 }
 export default Card;
